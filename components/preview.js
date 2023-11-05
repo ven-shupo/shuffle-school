@@ -26,14 +26,14 @@ function Preview () {
   return (
     <div
         className={styles.preview}
-        style={{backgroundColor: 'var(--tg-theme-bg-color)'}}
+        style={{backgroundColor: 'var(--tg-theme-secondary-bg-color)'}}
     >
         {lessons && 
             <div
                 className={styles.infoText}
                 style={{
                     color: 'var(--tg-theme-text-color)', 
-                    backgroundColor: 'var(--tg-theme-bg-color)'
+                    backgroundColor: 'var(--tg-theme-secondary-bg-color)'
                 }}
             > 
                 Осталось {8 - lessons} занятий
