@@ -16,9 +16,7 @@ export default function Home() {
           <title>XXX SHUFFLE</title>
           <link rel="icon" href="https://ven-shupo.github.io/shuffle-school/favicon.ico" />
         </Head>
-        <div>
-          <Preview/>
-        </div>
+        <Preview/>
     </div>
   );
 }
