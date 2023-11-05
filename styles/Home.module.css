@@ -1,7 +1,10 @@
 .preview {
+  position: absolute;
   margin: auto;
-  width: 50%;
-  padding: 20%;
+  width: 80vw;
+  max-width: 90vw;
+  height: 80vw;
+  max-height: 90vw;
 }
 
 .infoText {
