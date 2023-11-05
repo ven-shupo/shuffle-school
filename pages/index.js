@@ -1,11 +1,13 @@
 import Head from 'next/head';
 import Script from "next/script";
 import Preview from "../components/preview";
+import styles from '../styles/Home.module.css';
 
 
 export default function Home() {
   return (
     <div
+      className={styles.app}
       style={{backgroundColor: 'var(--tg-theme-secondary-bg-color)'}}
     >
       <Script

@@ -41,7 +41,10 @@ function Preview () {
         }
         <div
             className={styles.card}
-            style={{ backgroundImage: 'url(https://ven-shupo.github.io/shuffle-school/card.png)' }}
+            style={{ 
+                backgroundImage: 'url(https://ven-shupo.github.io/shuffle-school/card.png)',
+                backgroundColor: 'var(--tg-theme-secondary-bg-color)'
+            }}
         >
 
         </div>
