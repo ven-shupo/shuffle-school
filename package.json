@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@react-spring/web": "^9.7.3",
-    "airtable": "^0.12.2",
     "cors": "^2.8.5",
     "jquery": "^3.7.1",
     "next": "latest",
