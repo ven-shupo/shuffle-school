@@ -3,10 +3,10 @@ import {useTelegramWeb} from "../lib/telegramWeb";
 
 
 function Preview () {
-//   const tg = useTelegramWeb();
-//   tg.MainButton.setParams({text: 'Закрыть', is_visible: true}).onClick(() => {
-//     tg.close()
-//   });
+  const tg = useTelegramWeb();
+  tg.MainButton.setParams({text: 'Закрыть', is_visible: true}).onClick(() => {
+    tg.close()
+  });
   const [lessons, setLessons] = useState(0)
   useEffect(() => {
     const requestOptions = {
@@ -26,7 +26,9 @@ function Preview () {
     <div
       style={{backgroundColor: 'var(--tg-theme-bg-color)'}}
     >
-        У вас осталось {8 - lessons} уроков
+        {lessons && 
+            <div> У вас осталось {8 - lessons} занятий </div>
+        }
     </div>
   )
 }
