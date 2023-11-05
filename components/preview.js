@@ -16,8 +16,7 @@ function Preview () {
     fetch('https://api.airtable.com/v0/appYXVwx6zw8wmTW3/members?filterByFormula=email%3D7', requestOptions)
        .then((response) => response.json())
        .then((data) => {
-          console.log(data);
-        //   setPosts(data);
+            setLessons(data.records[0].fields.lessonCount);
        })
        .catch((err) => {
           console.log(err.message);
@@ -27,6 +26,7 @@ function Preview () {
     <div
       style={{backgroundColor: 'var(--tg-theme-bg-color)'}}
     >
+        У вас осталось {8 - lessons} уроков
     </div>
   )
 }
