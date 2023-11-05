@@ -39,6 +39,11 @@ function Preview () {
                 Осталось {8 - lessons} занятий
             </div>
         }
+        <div
+            style={{ backgroundImage: 'url(https://ven-shupo.github.io/shuffle-school/card.png)' }}
+        >
+
+        </div>
     </div>
   )
 }
