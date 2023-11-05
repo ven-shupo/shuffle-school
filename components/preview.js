@@ -25,6 +25,7 @@ function Preview () {
  }, []);
   return (
     <div
+        className={styles.preview}
         style={{backgroundColor: 'var(--tg-theme-bg-color)'}}
     >
         {lessons && 
