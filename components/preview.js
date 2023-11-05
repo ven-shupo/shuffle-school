@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {useTelegramWeb} from "../lib/telegramWeb";
+import styles from '../styles/Home.module.css';
 
 
 function Preview () {
@@ -24,7 +25,8 @@ function Preview () {
  }, []);
   return (
     <div
-      style={{backgroundColor: 'var(--tg-theme-bg-color)'}}
+        className={styles.infoText}
+        style={{backgroundColor: 'var(--tg-theme-bg-color)'}}
     >
         {lessons && 
             <div> У вас осталось {8 - lessons} занятий </div>
