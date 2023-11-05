@@ -1,5 +1,7 @@
 .preview {
-  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: auto;
   width: 100vw;
   max-width: 100vw;
@@ -7,9 +9,7 @@
 }
 
 .infoText {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   animation-name: popup;
   animation-duration: 800ms;
 }
