@@ -28,6 +28,14 @@ function Preview () {
         className={styles.preview}
         style={{backgroundColor: 'var(--tg-theme-secondary-bg-color)'}}
     >
+        <div
+            className={styles.card}
+            style={{ 
+                backgroundImage: 'url(https://ven-shupo.github.io/shuffle-school/card.png)',
+                backgroundColor: 'var(--tg-theme-secondary-bg-color)'
+            }}
+        >
+        </div>
         {lessons && 
             <div
                 className={styles.infoText}
@@ -39,15 +47,6 @@ function Preview () {
                 Осталось {8 - lessons} занятий
             </div>
         }
-        <div
-            className={styles.card}
-            style={{ 
-                backgroundImage: 'url(https://ven-shupo.github.io/shuffle-school/card.png)',
-                backgroundColor: 'var(--tg-theme-secondary-bg-color)'
-            }}
-        >
-
-        </div>
     </div>
   )
 }
