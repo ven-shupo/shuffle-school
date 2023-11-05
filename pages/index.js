@@ -7,7 +7,6 @@ import Preview from "../components/preview";
 export default function Home() {
   return (
     <div
-      className={styles.app}
       style={{backgroundColor: 'var(--tg-theme-secondary-bg-color)'}}
     >
       <Script
