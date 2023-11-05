@@ -32,7 +32,7 @@ function Preview () {
                 className={styles.infoText}
                 style={{color: 'var(--tg-theme-text-color)'}}
             > 
-                У вас осталось {8 - lessons} занятий
+                Осталось {8 - lessons} занятий
             </div>
         }
     </div>
