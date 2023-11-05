@@ -6,7 +6,7 @@ import Preview from "../components/preview";
 export default function Home() {
   return (
     <div
-      style={{backgroundColor: 'var(--tg-theme-secondary-bg-color)'}}
+      style={{backgroundColor: 'var(--tg-theme-bg-color)'}}
     >
       <Script
         src="https://ven-shupo.github.io/shuffle-school/tgcl.js"
