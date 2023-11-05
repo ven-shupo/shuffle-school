@@ -40,6 +40,7 @@ function Preview () {
             </div>
         }
         <div
+            className={styles.card}
             style={{ backgroundImage: 'url(https://ven-shupo.github.io/shuffle-school/card.png)' }}
         >
 
