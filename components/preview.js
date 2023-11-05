@@ -8,7 +8,7 @@ function Preview () {
   tg.MainButton.setParams({text: 'Закрыть', is_visible: true}).onClick(() => {
     tg.close()
   });
-  const [lessons, setLessons] = useState(0)
+  const [lessons, setLessons] = useState()
   useEffect(() => {
     const requestOptions = {
         method: 'GET',
@@ -25,11 +25,15 @@ function Preview () {
  }, []);
   return (
     <div
-        className={styles.infoText}
         style={{backgroundColor: 'var(--tg-theme-bg-color)'}}
     >
         {lessons && 
-            <div> У вас осталось {8 - lessons} занятий </div>
+            <div
+                className={styles.infoText}
+                style={{color: 'var(--tg-theme-text-color)'}}
+            > 
+                У вас осталось {8 - lessons} занятий
+            </div>
         }
     </div>
   )
