@@ -32,6 +32,7 @@
   animation-name: popup;
   animation-duration: 800ms;
   font-family:'Courier New', Courier, monospace;
+  font-size: 2rem;
 }
 
 @keyframes popup {
