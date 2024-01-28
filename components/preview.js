@@ -21,7 +21,7 @@ function Preview () {
   };
   const tgUserName = tg.initDataUnsafe.user.username;
   var url = new URL("https://api.airtable.com/v0/appXfAFgufLXTHPVr/dancer");
-  var params = {filterByFormula: 'tg=' + tgUserName};
+  var params = {filterByFormula: 'tg="' + tgUserName + '"'};
   Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
   console.log("new url", url);
   fetch(url, requestOptions)
