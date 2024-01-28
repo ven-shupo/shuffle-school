@@ -8,13 +8,18 @@ function Preview () {
   tg.MainButton.setParams({text: 'Закрыть', is_visible: true}).onClick(() => {
     tg.close()
   });
+  console.log("tg", tg)
+  console.log("tg.initDataUnsafe", tg.initDataUnsafe)
+  console.log("tg.initDataUnsafe.user", tg.initDataUnsafe.user)
+  console.log("tg.initDataUnsafe.user.username", tg.initDataUnsafe.user.username)
+  const tgUserName =  tg.initDataUnsafe.user.username;
   const [lessons, setLessons] = useState();
   useEffect(() => {
     const requestOptions = {
         method: 'GET',
         headers: { "Authorization": "Bearer pattpUkpI0kiExoi9.e98cfe85447f4a5d49fbd63d0f59baa57121f7578e207036c666c8cb0329eeb9"},
     };
-    fetch('https://api.airtable.com/v0/appXfAFgufLXTHPVr/dancer?filterByFormula=tg%3D' + tg.initDataUnsafe.user.username, requestOptions)
+    fetch('https://api.airtable.com/v0/appXfAFgufLXTHPVr/dancer?filterByFormula=tg%3D' + tgUserName, requestOptions)
        .then((response) => response.json())
        .then((data) => {
             setLessons(data.records[0].fields.classes_left);
