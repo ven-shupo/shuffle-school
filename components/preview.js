@@ -17,8 +17,8 @@ function Preview () {
 
   var url = new URL("https://api.airtable.com/v0/appXfAFgufLXTHPVr/dancer");
   var params = {filterByFormula:tgUserName};
-  Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
-
+  Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+  console.log("new url", url);
   useEffect(() => {
     const requestOptions = {
         method: 'GET',
