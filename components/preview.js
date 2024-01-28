@@ -14,10 +14,10 @@ function Preview () {
         method: 'GET',
         headers: { "Authorization": "Bearer patjwWYpmH9i2vk6n.ac5d32a4790e27c8cf63bc7763bb4ad5fd8aef3177c872447551cd39937e7f25"},
     };
-    fetch('https://api.airtable.com/v0/appYXVwx6zw8wmTW3/members?filterByFormula=email%3D7', requestOptions)
+    fetch('https://api.airtable.com/v0/appXfAFgufLXTHPVr/dancer?filterByFormula=tg%3D' + tg.initDataUnsafe.user.username, requestOptions)
        .then((response) => response.json())
        .then((data) => {
-            setLessons(data.records[0].fields.lessonCount);
+            setLessons(data.records[0].fields.classes_left);
        })
        .catch((err) => {
           console.log(err.message);
