@@ -9,8 +9,6 @@ function Preview () {
     tg.close()
   });
   const [lessons, setLessons] = useState();
-  console.log("tg", tg);
-  console.log("tg.initDataUnsafe", tg.initDataUnsafe);
   useEffect(() => {
     const requestOptions = {
         method: 'GET',
