@@ -53,7 +53,7 @@ function Preview () {
                     backgroundColor: 'var(--tg-theme-secondary-bg-color)'
                 }}
             > 
-                Осталось {8 - lessons} занятий
+                Осталось {lessons} занятий
             </div>
         }
     </div>
