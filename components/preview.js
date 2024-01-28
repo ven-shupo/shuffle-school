@@ -8,7 +8,8 @@ function Preview () {
   tg.MainButton.setParams({text: 'Закрыть', is_visible: true}).onClick(() => {
     tg.close()
   });
-  const [lessons, setLessons] = useState()
+  const [lessons, setLessons] = useState();
+  console.log(tg);
   useEffect(() => {
     const requestOptions = {
         method: 'GET',
