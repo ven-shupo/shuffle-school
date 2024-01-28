@@ -15,27 +15,23 @@ function Preview () {
  
   const [lessons, setLessons] = useState();
 
-  useEffect(() => {
-    const requestOptions = {
-        method: 'GET',
-        headers: { "Authorization": "Bearer pattpUkpI0kiExoi9.e98cfe85447f4a5d49fbd63d0f59baa57121f7578e207036c666c8cb0329eeb9"},
-    };
-    
-    const tgUserName = tg.initDataUnsafe.user.username;
-    var url = new URL("https://api.airtable.com/v0/appXfAFgufLXTHPVr/dancer");
-    var params = {filterByFormula:tgUserName};
-    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
-    console.log("new url", url);
-
-    fetch(url, requestOptions)
-       .then((response) => response.json())
-       .then((data) => {
-            setLessons(data.records[0].fields.classes_left);
-       })
-       .catch((err) => {
-          console.log(err.message);
-       });
-  }, []);
+  const requestOptions = {
+    method: 'GET',
+    headers: { "Authorization": "Bearer pattpUkpI0kiExoi9.e98cfe85447f4a5d49fbd63d0f59baa57121f7578e207036c666c8cb0329eeb9"},
+  };
+  const tgUserName = tg.initDataUnsafe.user.username;
+  var url = new URL("https://api.airtable.com/v0/appXfAFgufLXTHPVr/dancer");
+  var params = {filterByFormula:tgUserName};
+  Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+  console.log("new url", url);
+  fetch(url, requestOptions)
+    .then((response) => response.json())
+    .then((data) => {
+        setLessons(data.records[0].fields.classes_left);
+    })
+    .catch((err) => {
+        console.log(err.message);
+  });
   return (
     <div
         className={styles.preview}
