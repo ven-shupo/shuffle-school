@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css';
 
 function choosePlural(count) {
     count = parseInt(count, 10);
-    let words = ['занятие', 'занятия', 'заняитй'];
+    let words = ['занятие', 'занятия', 'занятий'];
     return words[ (count % 100 > 4 && count % 100 < 20) ? 2 : cases[ Math.min(count % 10, 5)] ];
 }
 
