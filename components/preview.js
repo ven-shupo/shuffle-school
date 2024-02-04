@@ -4,7 +4,6 @@ import styles from '../styles/Home.module.css';
 
 
 function choosePlural(count) {
-    count = parseInt(count, 10);
     let words = ['занятие', 'занятия', 'занятий'];
     return words[ (count % 100 > 4 && count % 100 < 20) ? 2 : cases[ Math.min(count % 10, 5)] ];
 }
@@ -35,7 +34,7 @@ function Preview () {
             if (classes_left <= 0) {
                 setNoClassesText('Занятий не осталось(');
             } else {
-                setLessons(classes_left);
+                setLessons(`${classes_left} ${choosePlural(classes_left)}`);
             }
         } else {
             setNoClassesText('О вашем абонементе еще нет информарции(');
@@ -65,7 +64,7 @@ function Preview () {
                     backgroundColor: 'var(--tg-theme-secondary-bg-color)'
                 }}
             > 
-            Осталось {lessons} {choosePlural(lessons)}
+            Осталось {lessons}
             </div>
         ) : (
             <div
