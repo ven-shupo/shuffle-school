@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {useTelegramWeb} from "../lib/telegramWeb";
 import styles from '../styles/Home.module.css';
 
@@ -49,10 +49,18 @@ function Preview () {
                     backgroundColor: 'var(--tg-theme-secondary-bg-color)'
                 }}
             > 
-                Осталось {lessons} занятий
+            Осталось {lessons} занятий
             </div>
-            ) : (
-                <p>У нас еще нет информации о ваших оставшихся занятиях, обрытитесь к преподавателю</p>
+        ) : (
+            <div
+            className={styles.infoText}
+            style={{
+                color: 'var(--tg-theme-text-color)', 
+                backgroundColor: 'var(--tg-theme-secondary-bg-color)'
+            }}
+            > 
+            У нас еще нет информации о ваших оставшихся занятиях, обрытитесь к преподавателю
+            </div>
             )
         }
     </div>
