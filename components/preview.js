@@ -10,7 +10,7 @@ function Preview () {
   });
  
   const [lessons, setLessons] = useState();
-
+  const [noClassesText, setNoClassesText] = useState('Данные загружаются ...');
   const requestOptions = {
     method: 'GET',
     headers: { "Authorization": "Bearer pattpUkpI0kiExoi9.e98cfe85447f4a5d49fbd63d0f59baa57121f7578e207036c666c8cb0329eeb9"},
@@ -23,7 +23,11 @@ function Preview () {
   fetch(url, requestOptions)
     .then((response) => response.json())
     .then((data) => {
-        setLessons(data.records[0].fields.classes_left);
+        if (data.records.length > 0) {
+            setLessons(data.records[0].fields.classes_left);
+        } else {
+            setNoClassesText('О вашем абонементе еще нет информарции(')
+        }
     })
     .catch((err) => {
         console.log(err.message);
@@ -53,13 +57,13 @@ function Preview () {
             </div>
         ) : (
             <div
-            className={styles.infoText}
-            style={{
-                color: 'var(--tg-theme-text-color)', 
-                backgroundColor: 'var(--tg-theme-secondary-bg-color)'
-            }}
+                className={styles.infoText}
+                style={{
+                    color: 'var(--tg-theme-text-color)', 
+                    backgroundColor: 'var(--tg-theme-secondary-bg-color)'
+                }}
             > 
-            У нас еще нет информации о ваших оставшихся занятиях, обрытитесь к преподавателю
+            {noClassesText}
             </div>
             )
         }
