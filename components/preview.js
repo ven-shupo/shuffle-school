@@ -8,10 +8,6 @@ function Preview () {
   tg.MainButton.setParams({text: 'Закрыть', is_visible: true}).onClick(() => {
     tg.close()
   });
-  console.log("tg", tg)
-  console.log("tg.initDataUnsafe", tg.initDataUnsafe)
-  console.log("tg.initDataUnsafe.user", tg.initDataUnsafe.user)
-  console.log("tg.initDataUnsafe.user.username", tg.initDataUnsafe.user.username)
  
   const [lessons, setLessons] = useState();
 
@@ -45,7 +41,7 @@ function Preview () {
             }}
         >
         </div>
-        {lessons && 
+        {lessons ? (
             <div
                 className={styles.infoText}
                 style={{
@@ -55,6 +51,9 @@ function Preview () {
             > 
                 Осталось {lessons} занятий
             </div>
+            ) : (
+                <p>У нас еще нет информации о ваших оставшихся занятиях, обрытитесь к преподавателю</p>
+            )
         }
     </div>
   )
