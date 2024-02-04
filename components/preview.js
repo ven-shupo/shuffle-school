@@ -15,7 +15,7 @@ function Preview () {
     tg.close()
   });
  
-  const [lessons, setLessons] = useState('');
+  const [lessons, setLessons] = useState();
   const [noClassesText, setNoClassesText] = useState('Данные загружаются ...');
   const requestOptions = {
     method: 'GET',
@@ -32,8 +32,8 @@ function Preview () {
         console.log(data.records.length);
         if (data.records.length > 0) {
             let classes_left = data.records[0].fields.classes_left;
-            if (parseInt(classes_left, 10) <= 0) {
-                setNoClassesText('Занятий не осталось (');
+            if (classes_left <= 0) {
+                setNoClassesText('Занятий не осталось(');
             } else {
                 setLessons(classes_left);
             }
