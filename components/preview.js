@@ -15,7 +15,7 @@ function Preview () {
     tg.close()
   });
  
-  const [lessons, setLessons] = useState();
+  const [lessons, setLessons] = useState('');
   const [noClassesText, setNoClassesText] = useState('Данные загружаются ...');
   const requestOptions = {
     method: 'GET',
@@ -51,7 +51,7 @@ function Preview () {
             }}
         >
         </div>
-        {lessons ? (
+        {(lessons != '') ? (
             <div
                 className={styles.infoText}
                 style={{
