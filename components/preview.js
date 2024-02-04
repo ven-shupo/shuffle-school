@@ -3,6 +3,12 @@ import {useTelegramWeb} from "../lib/telegramWeb";
 import styles from '../styles/Home.module.css';
 
 
+function choosePlural(count) {
+    count = parseInt(count, 10);
+    let words = ['занятие', 'занятия', 'заняитй'];
+    return words[ (count % 100 > 4 && count % 100 < 20) ? 2 : cases[ Math.min(count % 10, 5)] ];
+}
+
 function Preview () {
   const tg = useTelegramWeb();
   tg.MainButton.setParams({text: 'Закрыть', is_visible: true}).onClick(() => {
@@ -53,7 +59,7 @@ function Preview () {
                     backgroundColor: 'var(--tg-theme-secondary-bg-color)'
                 }}
             > 
-            Осталось {lessons} занятий
+            Осталось {lessons} {choosePlural(lessons)}
             </div>
         ) : (
             <div
