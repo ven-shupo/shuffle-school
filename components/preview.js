@@ -30,7 +30,12 @@ function Preview () {
     .then((response) => response.json())
     .then((data) => {
         if (data.records.length > 0) {
-            setLessons(data.records[0].fields.classes_left);
+            left = data.records[0].fields.classes_left;
+            if (parseInt(left, 10) <= 0) {
+                setNoClassesText('Занятий не осталось (');
+            } else {
+                setLessons(left);
+            }
         } else {
             setNoClassesText('О вашем абонементе еще нет информарции(')
         }
@@ -51,7 +56,7 @@ function Preview () {
             }}
         >
         </div>
-        {(lessons != '') ? (
+        {lessons ? (
             <div
                 className={styles.infoText}
                 style={{
