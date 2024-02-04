@@ -29,15 +29,16 @@ function Preview () {
   fetch(url, requestOptions)
     .then((response) => response.json())
     .then((data) => {
+        console.log(data.records.length);
         if (data.records.length > 0) {
-            left = data.records[0].fields.classes_left;
-            if (parseInt(left, 10) <= 0) {
+            let classes_left = data.records[0].fields.classes_left;
+            if (parseInt(classes_left, 10) <= 0) {
                 setNoClassesText('Занятий не осталось (');
             } else {
-                setLessons(left);
+                setLessons(classes_left);
             }
         } else {
-            setNoClassesText('О вашем абонементе еще нет информарции(')
+            setNoClassesText('О вашем абонементе еще нет информарции(');
         }
     })
     .catch((err) => {
